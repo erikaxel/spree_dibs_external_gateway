@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.name        = "spree_dibs_external_gateway"
   s.version     = version
   s.author     = "Erik Axel Nielsen"
-  s.email       = "N/A"
-  s.homepage    = "N/A"
+  s.email       = "spree@illumina.no"
+  s.homepage    = "https://github.com/erikaxel/spree_dibs_external_gateway"
   s.summary     = "N/A"
   s.description = "N/A"
 
