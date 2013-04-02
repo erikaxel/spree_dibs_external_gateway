@@ -31,8 +31,8 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
     nil
   end
 
-
-  def authorize(payment, options = {})
+  # * <tt>authorize(money, creditcard, options = {})</tt>
+  def authorize(money, credit_card, options = {})
     ActiveMerchant::Billing::Response.new(true, "", {}, {})
     #
     #ActiveMerchant::Billing::Response.new(true, 'DIBS: Forced success', {}, :test => true, :authorization => '12345', :avs_result => { :code => 'A' })
@@ -50,7 +50,7 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   end
 
 
-  def capture(payment, options = {})
+  def capture(money, reference, options = {})
     ActiveMerchant::Billing::Response.new(true, "", {}, {})
       #ActiveMerchant::Billing::Response.new(true, 'DIBS: Forced success', {}, :test => true, :authorization => '67890')
   end
