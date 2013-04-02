@@ -12,7 +12,7 @@ class Spree::BillingIntegration::Dibs < Spree::PaymentMethod
 
 
   def actions
-    %w(authorize, capture)
+    %w(authorize capture)
   end
 
   def initialize(options = {})
