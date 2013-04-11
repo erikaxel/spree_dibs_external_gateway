@@ -4,6 +4,11 @@ class Spree::BillingIntegration::Dibs < Spree::PaymentMethod
   #preference :return_url, :string
   #preference :cancel_return_url, :string
 
+  preference :test_mode, :boolean, :default => true
+
+  attr_accessible :preferred_test_mode
+
+
   #attr_accessible :preferred_merchant_id, preferred_return_url, preferred_cancel_return_url
 
   def provider_class
