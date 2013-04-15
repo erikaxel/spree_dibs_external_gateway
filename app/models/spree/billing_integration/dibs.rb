@@ -32,7 +32,7 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   end
 
   def payment_source_class
-    nil
+    Spree::DibsPaymentSource
   end
 
   # * <tt>authorize(money, creditcard, options = {})</tt>
@@ -50,7 +50,8 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   end
 
   def can_capture?(payment)
-    %w(checkout pending).include?(payment.state)
+    #%w(checkout pending).include?(payment.state)
+    true
   end
 
 
