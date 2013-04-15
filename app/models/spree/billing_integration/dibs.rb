@@ -1,20 +1,18 @@
-#class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
-class Spree::BillingIntegration::Dibs < Spree::PaymentMethod
-  #preference :merchant, :string
-  #preference :return_url, :string
-  #preference :cancel_return_url, :string
+class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
+#class Spree::BillingIntegration::Dibs < Spree::PaymentMethod
+  preference :merchant_id, :string
+  #preference :test_mode, :boolean, :default => true
 
-  preference :test_mode, :boolean, :default => true
-
-  attr_accessible :preferred_test_mode
-
-
-  #attr_accessible :preferred_merchant_id, preferred_return_url, preferred_cancel_return_url
+  #attr_accessible :preferred_test_mode, :preferred_merchant_id
+  attr_accessible :preferred_merchant_id
 
   def provider_class
-    self.class
+    ActiveMerchant::Billing::Integrations::Dibs
   end
 
+  def self.current
+    Spree::BillingIntegration::Dibs.where(:active => true).where(:environment => Rails.env.to_s).first
+  end
 
   def actions
     %w(authorize capture)
@@ -30,7 +28,7 @@ class Spree::BillingIntegration::Dibs < Spree::PaymentMethod
   end
 
   def source_required?
-    false
+    true
   end
 
   def payment_source_class
