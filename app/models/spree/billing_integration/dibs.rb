@@ -3,8 +3,7 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   preference :merchant_id, :string
   #preference :test_mode, :boolean, :default => true
 
-  #attr_accessible :preferred_test_mode, :preferred_merchant_id
-  attr_accessible :preferred_merchant_id
+  attr_accessible :preferred_test_mode, :preferred_merchant_id, :preferred_server
 
   def provider_class
     ActiveMerchant::Billing::Integrations::Dibs
