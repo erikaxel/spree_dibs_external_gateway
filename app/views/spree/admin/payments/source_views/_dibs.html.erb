@@ -1,0 +1,35 @@
+<fieldset>
+    <legend>DIBS</legend>
+
+    <table class="index">
+        <tr>
+            <th colspan="6">Transaction</th>
+        </tr>
+        <tr>
+            <td><label>DIBS Transaction number:</label></td>
+            <td>
+                <%= payment.source.dibs_transaction_number %>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Card type:</label></td>
+            <td>
+                <%= payment.source.card_type %>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Expery date:</label></td>
+            <td>
+                <%= payment.source.exp_month %> / <%= payment.source.exp_year %>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label>Masked card number:</label></td>
+            <td>
+                <%= payment.source.card_number_masked %>
+            </td>
+        </tr>
+
+    </table>
+</fieldset>
