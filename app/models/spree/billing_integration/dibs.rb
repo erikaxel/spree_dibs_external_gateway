@@ -3,8 +3,7 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   preference :merchant_id, :string
   #preference :test_mode, :boolean, :default => true
 
-  #attr_accessible :preferred_test_mode, :preferred_merchant_id
-  attr_accessible :preferred_merchant_id
+  attr_accessible :preferred_test_mode, :preferred_merchant_id, :preferred_server
 
   def provider_class
     ActiveMerchant::Billing::Integrations::Dibs
@@ -32,7 +31,7 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   end
 
   def payment_source_class
-    nil
+    Spree::DibsPaymentSource
   end
 
   # * <tt>authorize(money, creditcard, options = {})</tt>
@@ -50,7 +49,8 @@ class Spree::BillingIntegration::Dibs < Spree::BillingIntegration
   end
 
   def can_capture?(payment)
-    %w(checkout pending).include?(payment.state)
+    #%w(checkout pending).include?(payment.state)
+    true
   end
 
 
