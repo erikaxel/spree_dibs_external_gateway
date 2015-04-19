@@ -1,3 +1,11 @@
 = SpreeDibsExternalGateway
 
 This project rocks and uses MIT-LICENSE.
+
+
+Bundle your dependencies and run the installation generator:
+
+```shell
+bundle
+bundle exec rails g spree_dibs_external_gateway:install
+```

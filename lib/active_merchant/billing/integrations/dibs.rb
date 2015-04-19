@@ -8,6 +8,11 @@ module ActiveMerchant #:nodoc:
         mattr_accessor :service_url
         self.service_url = 'https://sat1.dibspayment.com/dibspaymentwindow/entrypoint'
 
+        def payment_url(opts)
+          post = PostData.new
+          post.merge! opts
+          "#{service_url}?#{post.to_s}"
+        end
 
         def self.notification(post, options = {})
           Notification.new(post, options)

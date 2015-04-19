@@ -15,5 +15,6 @@ Gem::Specification.new do |s|
   s.require_paths = %w(lib)
   s.has_rdoc      = false
 
-  s.add_dependency 'spree_core', '>=1.3.0'
+  s.add_dependency 'spree_core', '>=3.0.0'
+  # s.add_dependency 'spree_gateway', git: 'git://github.com/spree/spree_gateway.git', branch: '3-0-stable'
 end
