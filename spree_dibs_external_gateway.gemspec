@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = "spree_dibs_external_gateway"
   s.version     = version
   s.author     = "Erik Axel Nielsen"
-  s.email       = "spree@illumina.no"
+  s.email       = "erikaxel.nielsen@gmail.com"
   s.homepage    = "https://github.com/erikaxel/spree_dibs_external_gateway"
   s.summary     = "N/A"
   s.description = "N/A"
@@ -15,6 +15,5 @@ Gem::Specification.new do |s|
   s.require_paths = %w(lib)
   s.has_rdoc      = false
 
-  s.add_dependency 'spree_core', '>=3.0.0'
-  # s.add_dependency 'spree_gateway', git: 'git://github.com/spree/spree_gateway.git', branch: '3-0-stable'
+  s.add_dependency 'solidus_core'
 end
