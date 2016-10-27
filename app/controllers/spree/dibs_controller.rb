@@ -1,5 +1,5 @@
 class Spree::DibsController < ActionController::Base
-  skip_before_filter :verify_authenticity_token, only: [:dibs_test_post]
+  skip_before_action :verify_authenticity_token, only: [:dibs_test_post]
 
   def dibs_test_post
     render template: 'spree/checkout/dibs_test_post', layout: false
